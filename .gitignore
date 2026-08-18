@@ -1,0 +1,10 @@
+.ollama/
+data/raw/
+data/processed/
+afriwise/export/
+__pycache__/
+*.ipynb_checkpoints/
+*.gguf
+*.safetensors
+*.bin
+*.pt
