@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+    <!-- Minimalist editorial AI/Language graphic -->
+    <!-- Background blocks -->
+    <rect x="50" y="100" width="200" height="300" rx="4" fill="#16324f" stroke="#18435a" stroke-width="2"/>
+    <rect x="150" y="50" width="300" height="200" rx="4" fill="#13293d" stroke="#3e92cc" stroke-width="1"/>
+    
+    <!-- Geometry -->
+    <circle cx="350" cy="350" r="100" fill="none" stroke="#2a628f" stroke-width="1.5" stroke-dasharray="4 6"/>
+    <circle cx="350" cy="350" r="70" fill="#3e92cc" opacity="0.1"/>
+    <circle cx="350" cy="350" r="30" fill="none" stroke="#3e92cc" stroke-width="1"/>
+    
+    <!-- Typographic elements representing language -->
+    <text x="180" y="150" font-family="serif" font-size="54" fill="#3e92cc" opacity="0.9">Ọ</text>
+    <text x="240" y="150" font-family="serif" font-size="54" fill="#2a628f" opacity="0.9">Ị</text>
+    <text x="100" y="360" font-family="serif" font-size="80" fill="#3e92cc" opacity="0.3">Ẹ</text>
+    <text x="320" y="380" font-family="serif" font-size="96" fill="#3e92cc" opacity="0.2">Ụ</text>
+
+    <!-- Neural connection lines -->
+    <circle cx="200" cy="200" r="4" fill="#3e92cc"/>
+    <circle cx="280" cy="180" r="4" fill="#3e92cc"/>
+    <circle cx="350" cy="250" r="4" fill="#3e92cc"/>
+    <circle cx="260" cy="300" r="4" fill="#3e92cc"/>
+    
+    <path d="M200 200 L280 180 L350 250 L260 300 Z" fill="none" stroke="#2a628f" stroke-width="1.5" opacity="0.6"/>
+</svg>

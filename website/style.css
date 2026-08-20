@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap');
+
+:root {
+  /* Requested Color Palette */
+  --blue-bell: #3e92cc;
+  --baltic-blue: #2a628f;
+  --deep-space-blue: #13293d;
+  --deep-space-blue-2: #16324f;
+  --yale-blue: #18435a;
+
+  /* Fonts (Modern / Editorial) */
+  --font-serif: "IBM Plex Serif", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Layout constraints */
+  --sidebar-width: 280px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--deep-space-blue);
+  color: #e2e8f0; /* Off-white for readability */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem); /* Responsive display size */
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--yale-blue);
+  padding-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  max-width: 65ch; /* Editorial max width */
+  margin-bottom: 1.5rem;
+}
+
+/* Sidebar */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--deep-space-blue-2);
+  border-right: 1px solid var(--yale-blue);
+  padding: 2.5rem 1.5rem;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--blue-bell);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: none;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar a:hover, .sidebar a.active {
+  background-color: var(--yale-blue);
+  color: #ffffff;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 5rem 4rem;
+  max-width: calc(100% - var(--sidebar-width));
+}
+
+.content-wrapper {
+  max-width: 1000px; /* Constrain main reading column */
+}
+
+/* Eyebrow label - used sparingly */
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  color: var(--blue-bell);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+}
+
+/* Hero Section - Asymmetrical */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 6rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--yale-blue);
+}
+
+.hero-content {
+  grid-column: 1;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  max-width: 50ch;
+}
+
+/* Buttons */
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--blue-bell);
+  color: var(--deep-space-blue);
+  padding: 0.875rem 1.5rem;
+  border-radius: 2px; /* Brutalist/Minimal touch instead of pills */
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  transition: background-color 0.2s;
+  margin-top: 1.5rem;
+}
+
+.button-link:hover {
+  background-color: var(--baltic-blue);
+  color: #ffffff;
+}
+
+/* Bento/Asymmetric Grid (No generic 3-col equal cards) */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.bento-card {
+  background-color: var(--deep-space-blue-2);
+  border: 1px solid var(--yale-blue);
+  padding: 2.5rem;
+  border-radius: 4px; /* Slight softening, not 12px bubbles */
+}
+
+.bento-card.wide {
+  grid-column: span 8;
+}
+
+.bento-card.narrow {
+  grid-column: span 4;
+}
+
+.bento-card.full {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.bento-card h3 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: var(--blue-bell);
+  margin-bottom: 1rem;
+}
+
+.bento-card iconify-icon {
+  font-size: 2rem;
+  color: var(--blue-bell);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* Code Blocks */
+.code-block {
+  background-color: #0b1723; /* Darker than deep-space-blue for contrast */
+  border: 1px solid var(--yale-blue);
+  border-left: 3px solid var(--blue-bell); /* Accent border */
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+/* Lists */
+.editorial-list {
+  list-style: none;
+  margin: 2rem 0;
+}
+
+.editorial-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  color: #cbd5e1;
+}
+
+.editorial-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  background-color: var(--blue-bell);
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bento-card.wide, .bento-card.narrow {
+    grid-column: span 12;
+  }
+  .bento-card.full {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 3rem 1.5rem;
+    max-width: 100%;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
