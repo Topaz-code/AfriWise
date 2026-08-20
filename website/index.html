@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriWise: Run Locally Guide</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>
+                <iconify-icon icon="lucide:book-open"></iconify-icon>
+                AfriWise Docs
+            </h2>
+            <ul>
+                <li><a href="#introduction" class="active">Introduction</a></li>
+                <li><a href="#importance">Why AfriWise?</a></li>
+                <li><a href="#download">How to Download</a></li>
+                <li><a href="#usage">How to Use</a></li>
+                <li><a href="#use-cases">Use Cases</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                
+                <div class="hero">
+                    <div class="hero-content">
+                        <span class="badge">Run Locally Guide</span>
+                        <h1>AfriWise <em>AI Model</em></h1>
+                        <p>Run the powerful Southern Nigerian language model locally on your own device, offline and in total privacy.</p>
+                        
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://huggingface.co/Topaz-arts/Afriwise" target="_blank" rel="noopener noreferrer" class="button-link" aria-label="View AfriWise on Hugging Face">
+                                View on Hugging Face <iconify-icon icon="lucide:arrow-right" aria-hidden="true"></iconify-icon>
+                            </a>
+                            <a href="https://github.com/Topaz-code/AfriWise" target="_blank" rel="noopener noreferrer" class="button-link" aria-label="View AfriWise on GitHub" style="background-color: var(--deep-space-blue-2); border: 1px solid var(--yale-blue); color: var(--blue-bell);">
+                                View on GitHub <iconify-icon icon="lucide:github" aria-hidden="true"></iconify-icon>
+                            </a>
+                            <a href="https://huggingface.co/spaces/Topaz-arts/Afriwise" target="_blank" rel="noopener noreferrer" class="button-link" aria-label="Test AfriWise on Hugging Face Spaces" style="background-color: var(--blue-bell);">
+                                Test Space <iconify-icon icon="lucide:test-tube" aria-hidden="true"></iconify-icon>
+                            </a>
+                            <a href="https://huggingface.co/Topaz-arts/AfriWise-Qwen2.5-3B-GGUF" target="_blank" rel="noopener noreferrer" class="button-link" aria-label="Download AfriWise Qwen2.5 3B GGUF model" style="background-color: var(--blue-bell);">
+                                Model Link <iconify-icon icon="lucide:download" aria-hidden="true"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="hero.svg" alt="Abstract language network illustration" style="width: 100%; max-width: 400px; height: auto;" />
+                    </div>
+                </div>
+
+                <section id="introduction">
+                    <p><strong>AfriWise</strong> is a state-of-the-art language model fine-tuned specifically to understand, translate, and preserve Southern Nigerian languages, including <strong>Igbo</strong>, <strong>Efik/Ibibio</strong>, and <strong>Bini/Edo</strong>.</p>
+                    <p>Built on top of the efficient Phi-3-Mini architecture, it is designed to run entirely offline on consumer hardware, bridging the digital divide for low-resource languages.</p>
+                </section>
+
+                <section id="importance">
+                    <h2>The Importance of AfriWise</h2>
+                    <div class="bento-grid">
+                        <div class="bento-card wide">
+                            <iconify-icon icon="lucide:languages" aria-hidden="true"></iconify-icon>
+                            <h3>Cultural Preservation</h3>
+                            <p>Most commercial AI models overlook African languages. AfriWise ensures that Southern Nigerian heritage, idioms, and orthography are actively represented and preserved in the modern AI era.</p>
+                        </div>
+                        <div class="bento-card narrow">
+                            <iconify-icon icon="lucide:shield-check" aria-hidden="true"></iconify-icon>
+                            <h3>Data Privacy</h3>
+                            <p>Because it runs locally via Ollama, none of your prompts or translations are ever sent to a cloud server.</p>
+                        </div>
+                        <div class="bento-card full">
+                            <div>
+                                <iconify-icon icon="lucide:zap" aria-hidden="true"></iconify-icon>
+                                <h3>Accessible Tech</h3>
+                            </div>
+                            <div>
+                                <p>At under 4 billion parameters (quantized to 4-bit GGUF), AfriWise requires less than 6GB of RAM. It runs quickly on standard laptops without requiring expensive cloud GPUs or persistent internet connectivity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="download">
+                    <h2>How to Download and Run</h2>
+                    <p>We use Ollama to make running AfriWise incredibly simple. Ollama handles downloading the weights, managing RAM, and running the inference engine locally.</p>
+
+                    <ul class="editorial-list">
+                        <li><strong>Install Ollama:</strong> Download it from <a href="https://ollama.com/download" style="color: var(--blue-bell); text-decoration: none; border-bottom: 1px solid var(--blue-bell);">ollama.com</a> if you don't have it installed.</li>
+                        <li><strong>Pull the Model:</strong> Ollama will automatically download the model when you run it for the first time.</li>
+                        <li><strong>Run the Model:</strong> Open your terminal or command prompt and paste the command below.</li>
+                    </ul>
+
+                    <div class="code-block">
+                        ollama run emmy_rabs/afriwise
+                    </div>
+                    
+                    <p>Ollama will automatically download the 7GB model file. Once finished, it will drop you directly into a chat interface.</p>
+
+                    <h3>Detailed Installation Guide:</h3>
+                    <ul class="editorial-list">
+                        <li><strong>Step 1:</strong> Install Ollama from <a href="https://ollama.com/download" target="_blank" rel="noopener noreferrer" style="color: var(--blue-bell); text-decoration: none; border-bottom: 1px solid var(--blue-bell);">ollama.com</a></li>
+                        <li><strong>Step 2:</strong> Verify installation by opening a terminal and running <code>ollama --version</code></li>
+                        <li><strong>Step 3:</strong> Run <code>ollama run emmy_rabs/afriwise</code> to download and start the model</li>
+                        <li><strong>Step 4:</strong> Wait for the download to complete (approximately 4GB for the quantized version)</li>
+                        <li><strong>Step 5:</strong> You'll see the <code>>>></code> prompt indicating the model is ready to use</li>
+                    </ul>
+
+                    <h3>Compatible Software:</h3>
+                    <p>AfriWise is distributed in GGUF format, making it compatible with various inference software:</p>
+                    <ul class="editorial-list">
+                        <li><strong>Ollama:</strong> Primary recommended method (used in this guide)</li>
+                        <li><strong>LM Studio:</strong> GUI-based interface for local LLMs</li>
+                        <li><strong>Jan.ai:</strong> Open-source alternative with chat interface</li>
+                        <li><strong>Text Generation WebUI:</strong> Advanced interface with multiple backend options</li>
+                        <li><strong> llama.cpp:</strong> Command-line interface for direct GGUF inference</li>
+                    </ul>
+
+                    <h3>Usage Tips:</h3>
+                    <ul class="editorial-list">
+                        <li>Use <code>/bye</code> to exit the Ollama chat interface</li>
+                        <li>To reload the model later, simply run <code>ollama run emmy_rabs/afriwise</code> again</li>
+                        <li>The model runs completely offline once downloaded</li>
+                        <li>For best performance, ensure you have at least 8GB RAM available</li>
+                    </ul>
+                </section>
+
+                <section id="usage">
+                    <h2>Usage Example</h2>
+                    <p>Once you see the <code>&gt;&gt;&gt;</code> prompt in your terminal, you can start talking to AfriWise directly. To exit the chat, simply type <code>/bye</code>.</p>
+                    <div class="code-block">
+>>> How do you say 'Good morning' in Bini?<br>
+<br>
+In Bini-Edo: 'Ob'owie' means good morning. For elders, you would prostrate or kneel while greeting.
+                    </div>
+                </section>
+
+                <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--yale-blue); display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #94a3b8;">
+                    <div>
+                        <strong>AfriWise</strong> &copy; 2026. 100% Free to use.
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="color: var(--blue-bell); text-decoration: none;">Privacy Policy</a>
+                        <a href="#" style="color: var(--blue-bell); text-decoration: none;">Terms of Service</a>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <!-- Structured Data for Directory Submissions and GEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AfriWise",
+      "operatingSystem": "Any (via Ollama)",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "AfriWise is a locally-run AI language model for Southern Nigerian languages (Igbo, Efik, Bini)."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How much does AfriWise cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AfriWise is 100% free to use. You can download and run it locally without any subscription."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does AfriWise require internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Once downloaded via Ollama, AfriWise runs entirely offline ensuring total data privacy."
+        }
+      }]
+    }
+    </script>
+</body>
+</html>
